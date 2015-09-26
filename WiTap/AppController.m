@@ -62,7 +62,7 @@
 // To avoid conflicts, you must register your service type with IANA before 
 // shipping.
 // 
-// To help network administrators indentify your service, you should choose a 
+// To help network administrators identify your service, you should choose a
 // service name that's reasonably human readable.
 
 static NSString * kWiTapBonjourType = @"_witap2._tcp.";
