@@ -5,7 +5,7 @@ The new 2015 Apple TV includes a Siri Remote, but if you want to support multipl
 
 This library aims to enable connecting an iPhone as a controller. Conceptually, it's as if you were to pair your iPhone with the new Apple TV. You'll be able to use it as a controller in your apps, communicating between the iOS device and your tvOS app.
 
-According to Apple, the means of connectivity must be over the network or BTLE, which is probably how the Crossy Road folks did it.
+According to Apple, the means of connectivity must be [over the network or BTLE](https://forums.developer.apple.com/thread/18471), which is probably how the Crossy Road folks did it.
 
 ## Other options
 
