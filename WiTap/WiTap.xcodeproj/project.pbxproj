@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04B6E9901BB73FB80079A7B3 /* TouchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6E98F1BB73FB80079A7B3 /* TouchViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		04B6E9901BB73FB80079A7B3 /* TouchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6E98F1BB73FB80079A7B3 /* TouchViewController.swift */; };
 		188D407F0D6D2F160076AE1E /* TapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 188D407D0D6D2F160076AE1E /* TapView.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		2D500B1C0D5A766900DBA0E3 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D500B1B0D5A766900DBA0E3 /* AppController.m */; };
 		4AFB75470DF7691E00DCF235 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFB75460DF7691E00DCF235 /* PickerViewController.m */; };
+		840DCDC41BB90C2A00EF33D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DCDC31BB90C2A00EF33D4 /* AppDelegate.swift */; };
+		840DCDC61BB90C2A00EF33D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DCDC51BB90C2A00EF33D4 /* ViewController.swift */; };
+		840DCDC91BB90C2A00EF33D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840DCDC71BB90C2A00EF33D4 /* Main.storyboard */; };
+		840DCDCB1BB90C2A00EF33D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840DCDCA1BB90C2A00EF33D4 /* Assets.xcassets */; };
+		840DCDD61BB90C2A00EF33D4 /* WiTapTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DCDD51BB90C2A00EF33D4 /* WiTapTVTests.swift */; };
+		840DCDDE1BB90FCC00EF33D4 /* cross24.png in Resources */ = {isa = PBXBuildFile; fileRef = E457A5E216FB7D5E00204457 /* cross24.png */; };
+		840DCDDF1BB90FCC00EF33D4 /* cross24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E457A5E316FB7D5E00204457 /* cross24@2x.png */; };
 		E456EFDB192678F00036772B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E456EFDA192678F00036772B /* Main.storyboard */; };
 		E457A5E416FB7D5E00204457 /* cross24.png in Resources */ = {isa = PBXBuildFile; fileRef = E457A5E216FB7D5E00204457 /* cross24.png */; };
 		E457A5E516FB7D5E00204457 /* cross24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E457A5E316FB7D5E00204457 /* cross24@2x.png */; };
@@ -28,6 +35,16 @@
 		E4F3DEC41642BDDD00FA3D62 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = E4F3DEBA1642BDDD00FA3D62 /* iTunesArtwork */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		840DCDD21BB90C2A00EF33D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 840DCDC01BB90C2A00EF33D4;
+			remoteInfo = WiTapTV;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		04B6E98E1BB73FB70079A7B3 /* WiTap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WiTap-Bridging-Header.h"; sourceTree = "<group>"; };
 		04B6E98F1BB73FB80079A7B3 /* TouchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +59,15 @@
 		2D500B1B0D5A766900DBA0E3 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		4AFB75450DF7691E00DCF235 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
 		4AFB75460DF7691E00DCF235 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
+		840DCDC11BB90C2A00EF33D4 /* WiTapTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiTapTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		840DCDC31BB90C2A00EF33D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		840DCDC51BB90C2A00EF33D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		840DCDC81BB90C2A00EF33D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		840DCDCA1BB90C2A00EF33D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		840DCDCC1BB90C2A00EF33D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		840DCDD11BB90C2A00EF33D4 /* WiTapTVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WiTapTVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		840DCDD51BB90C2A00EF33D4 /* WiTapTVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiTapTVTests.swift; sourceTree = "<group>"; };
+		840DCDD71BB90C2A00EF33D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E456EFDA192678F00036772B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E457A5E216FB7D5E00204457 /* cross24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross24.png; sourceTree = "<group>"; };
 		E457A5E316FB7D5E00204457 /* cross24@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross24@2x.png"; sourceTree = "<group>"; };
@@ -67,6 +93,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		840DCDBE1BB90C2A00EF33D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		840DCDCE1BB90C2A00EF33D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -74,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* WiTap.app */,
+				840DCDC11BB90C2A00EF33D4 /* WiTapTV.app */,
+				840DCDD11BB90C2A00EF33D4 /* WiTapTVTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,8 +143,31 @@
 				04B6E9911BB740D70079A7B3 /* TapViewControllerDelegate.h */,
 				04B6E98F1BB73FB80079A7B3 /* TouchViewController.swift */,
 				04B6E98E1BB73FB70079A7B3 /* WiTap-Bridging-Header.h */,
+				840DCDC21BB90C2A00EF33D4 /* WiTapTV */,
+				840DCDD41BB90C2A00EF33D4 /* WiTapTVTests */,
 			);
 			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		840DCDC21BB90C2A00EF33D4 /* WiTapTV */ = {
+			isa = PBXGroup;
+			children = (
+				840DCDC31BB90C2A00EF33D4 /* AppDelegate.swift */,
+				840DCDC51BB90C2A00EF33D4 /* ViewController.swift */,
+				840DCDC71BB90C2A00EF33D4 /* Main.storyboard */,
+				840DCDCA1BB90C2A00EF33D4 /* Assets.xcassets */,
+				840DCDCC1BB90C2A00EF33D4 /* Info.plist */,
+			);
+			path = WiTapTV;
+			sourceTree = "<group>";
+		};
+		840DCDD41BB90C2A00EF33D4 /* WiTapTVTests */ = {
+			isa = PBXGroup;
+			children = (
+				840DCDD51BB90C2A00EF33D4 /* WiTapTVTests.swift */,
+				840DCDD71BB90C2A00EF33D4 /* Info.plist */,
+			);
+			path = WiTapTVTests;
 			sourceTree = "<group>";
 		};
 		E4F3DEAF1642BDDD00FA3D62 /* Default Images */ = {
@@ -149,6 +214,41 @@
 			productReference = 1D6058910D05DD3D006BFB54 /* WiTap.app */;
 			productType = "com.apple.product-type.application";
 		};
+		840DCDC01BB90C2A00EF33D4 /* WiTapTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 840DCDDC1BB90C2A00EF33D4 /* Build configuration list for PBXNativeTarget "WiTapTV" */;
+			buildPhases = (
+				840DCDBD1BB90C2A00EF33D4 /* Sources */,
+				840DCDBE1BB90C2A00EF33D4 /* Frameworks */,
+				840DCDBF1BB90C2A00EF33D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WiTapTV;
+			productName = WiTapTV;
+			productReference = 840DCDC11BB90C2A00EF33D4 /* WiTapTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		840DCDD01BB90C2A00EF33D4 /* WiTapTVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 840DCDDD1BB90C2A00EF33D4 /* Build configuration list for PBXNativeTarget "WiTapTVTests" */;
+			buildPhases = (
+				840DCDCD1BB90C2A00EF33D4 /* Sources */,
+				840DCDCE1BB90C2A00EF33D4 /* Frameworks */,
+				840DCDCF1BB90C2A00EF33D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				840DCDD31BB90C2A00EF33D4 /* PBXTargetDependency */,
+			);
+			name = WiTapTVTests;
+			productName = WiTapTVTests;
+			productReference = 840DCDD11BB90C2A00EF33D4 /* WiTapTVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -161,6 +261,13 @@
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = M46NP8CAQ4;
 					};
+					840DCDC01BB90C2A00EF33D4 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					840DCDD01BB90C2A00EF33D4 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 840DCDC01BB90C2A00EF33D4;
+					};
 				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "WiTap" */;
@@ -172,12 +279,15 @@
 				Japanese,
 				French,
 				German,
+				Base,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* WiTap */,
+				840DCDC01BB90C2A00EF33D4 /* WiTapTV */,
+				840DCDD01BB90C2A00EF33D4 /* WiTapTVTests */,
 			);
 		};
 /* End PBXProject section */
@@ -203,6 +313,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		840DCDBF1BB90C2A00EF33D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				840DCDCB1BB90C2A00EF33D4 /* Assets.xcassets in Resources */,
+				840DCDC91BB90C2A00EF33D4 /* Main.storyboard in Resources */,
+				840DCDDE1BB90FCC00EF33D4 /* cross24.png in Resources */,
+				840DCDDF1BB90FCC00EF33D4 /* cross24@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		840DCDCF1BB90C2A00EF33D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -219,7 +347,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		840DCDBD1BB90C2A00EF33D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				840DCDC61BB90C2A00EF33D4 /* ViewController.swift in Sources */,
+				840DCDC41BB90C2A00EF33D4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		840DCDCD1BB90C2A00EF33D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				840DCDD61BB90C2A00EF33D4 /* WiTapTVTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		840DCDD31BB90C2A00EF33D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 840DCDC01BB90C2A00EF33D4 /* WiTapTV */;
+			targetProxy = 840DCDD21BB90C2A00EF33D4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		840DCDC71BB90C2A00EF33D4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				840DCDC81BB90C2A00EF33D4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
@@ -252,6 +416,149 @@
 				PRODUCT_NAME = WiTap;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WiTap-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		840DCDD81BB90C2A00EF33D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = WiTapTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.WiTapTV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		840DCDD91BB90C2A00EF33D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = WiTapTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.WiTapTV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		840DCDDA1BB90C2A00EF33D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = WiTapTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.WiTapTVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WiTapTV.app/WiTapTV";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		840DCDDB1BB90C2A00EF33D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = WiTapTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.WiTapTVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WiTapTV.app/WiTapTV";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -358,6 +665,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		840DCDDC1BB90C2A00EF33D4 /* Build configuration list for PBXNativeTarget "WiTapTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				840DCDD81BB90C2A00EF33D4 /* Debug */,
+				840DCDD91BB90C2A00EF33D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		840DCDDD1BB90C2A00EF33D4 /* Build configuration list for PBXNativeTarget "WiTapTVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				840DCDDA1BB90C2A00EF33D4 /* Debug */,
+				840DCDDB1BB90C2A00EF33D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "WiTap" */ = {
 			isa = XCConfigurationList;

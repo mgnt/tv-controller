@@ -50,7 +50,7 @@
 #import "TapViewController.h"
 #import "PickerViewController.h"
 
-// The Bonjour service type consists of an IANA service name (see RFC 6335) 
+// The Bonjour service type consists of an IANA service name (see RFC 6335)
 // prefixed by an underscore (as per RFC 2782).
 //
 // <http://www.ietf.org/rfc/rfc6335.txt>
@@ -59,7 +59,7 @@
 // 
 // See Section 5.1 of RFC 6335 for the specifics requirements.
 // 
-// To avoid conflicts, you must register your service type with IANA before 
+// To avoid conflicts, you must register your service type with IANA before
 // shipping.
 // 
 // To help network administrators identify your service, you should choose a
