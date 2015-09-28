@@ -19,6 +19,8 @@
 		840DCDD61BB90C2A00EF33D4 /* WiTapTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DCDD51BB90C2A00EF33D4 /* WiTapTVTests.swift */; };
 		840DCDDE1BB90FCC00EF33D4 /* cross24.png in Resources */ = {isa = PBXBuildFile; fileRef = E457A5E216FB7D5E00204457 /* cross24.png */; };
 		840DCDDF1BB90FCC00EF33D4 /* cross24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E457A5E316FB7D5E00204457 /* cross24@2x.png */; };
+		840DCDE01BB9113F00EF33D4 /* TouchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6E98F1BB73FB80079A7B3 /* TouchViewController.swift */; };
+		840DCDE11BB9118100EF33D4 /* TapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 188D407D0D6D2F160076AE1E /* TapView.m */; };
 		E456EFDB192678F00036772B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E456EFDA192678F00036772B /* Main.storyboard */; };
 		E457A5E416FB7D5E00204457 /* cross24.png in Resources */ = {isa = PBXBuildFile; fileRef = E457A5E216FB7D5E00204457 /* cross24.png */; };
 		E457A5E516FB7D5E00204457 /* cross24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E457A5E316FB7D5E00204457 /* cross24@2x.png */; };
@@ -351,8 +353,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840DCDE11BB9118100EF33D4 /* TapView.m in Sources */,
 				840DCDC61BB90C2A00EF33D4 /* ViewController.swift in Sources */,
 				840DCDC41BB90C2A00EF33D4 /* AppDelegate.swift in Sources */,
+				840DCDE01BB9113F00EF33D4 /* TouchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +456,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.WiTapTV";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_OBJC_BRIDGING_HEADER = "WiTap-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
@@ -486,6 +491,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.WiTapTV";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_OBJC_BRIDGING_HEADER = "WiTap-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;

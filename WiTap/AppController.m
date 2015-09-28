@@ -375,7 +375,7 @@ static NSString * kWiTapBonjourType = @"_witap2._tcp.";
 
 - (void)send:(uint8_t)message
 {
-    assert(self.streamOpenCount == 2);
+    assert(self.streamOpenCount == 2); // crashes here if we have not yet connected to a peer
 
     // Only write to the stream if it has space available, otherwise we might block. 
     // In a real app you have to handle this case properly but in this sample code it's 
@@ -459,7 +459,7 @@ static NSString * kWiTapBonjourType = @"_witap2._tcp.";
             self.isServerStarted = NO;
             self.registeredName = nil;
             
-            // Latch the input and output sterams and kick off an open.
+            // Latch the input and output streams and kick off an open.
             
             self.inputStream  = inputStream;
             self.outputStream = outputStream;

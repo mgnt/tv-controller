@@ -79,7 +79,7 @@ static const CGFloat kActivationInset = 10.0f;
 
 - (void)commonInit
 {
-    assert( ! self.isMultipleTouchEnabled );
+//    assert( ! self.isMultipleTouchEnabled ); // not available on tvOS
     self.layer.borderColor = [[UIColor darkGrayColor] CGColor];
     // Observe ourself to learn about someone changing the remoteTouch property.
     [self addObserver:self forKeyPath:@"remoteTouch" options:0 context:&self->_remoteTouch];
