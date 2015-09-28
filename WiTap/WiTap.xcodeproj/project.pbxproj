@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04B6E9901BB73FB80079A7B3 /* TouchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6E98F1BB73FB80079A7B3 /* TouchViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		188D407F0D6D2F160076AE1E /* TapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 188D407D0D6D2F160076AE1E /* TapView.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		2D500B1C0D5A766900DBA0E3 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D500B1B0D5A766900DBA0E3 /* AppController.m */; };
@@ -28,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04B6E98E1BB73FB70079A7B3 /* WiTap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WiTap-Bridging-Header.h"; sourceTree = "<group>"; };
+		04B6E98F1BB73FB80079A7B3 /* TouchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchViewController.swift; sourceTree = "<group>"; };
+		04B6E9911BB740D70079A7B3 /* TapViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapViewControllerDelegate.h; sourceTree = "<group>"; };
 		188D407D0D6D2F160076AE1E /* TapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapView.m; sourceTree = "<group>"; };
 		188D407E0D6D2F160076AE1E /* TapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapView.h; sourceTree = "<group>"; };
 		1BFA8F9A0DA6BA0400E6B5C8 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
@@ -77,23 +81,26 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				1BFA8F9A0DA6BA0400E6B5C8 /* ReadMe.txt */,
+				2D500B1A0D5A766900DBA0E3 /* AppController.h */,
+				2D500B1B0D5A766900DBA0E3 /* AppController.m */,
+				E457A5E216FB7D5E00204457 /* cross24.png */,
+				E457A5E316FB7D5E00204457 /* cross24@2x.png */,
+				E4F3DEAF1642BDDD00FA3D62 /* Default Images */,
+				E4F3DEB31642BDDD00FA3D62 /* Icons */,
 				2B91972911E675710007EFA5 /* Info.plist */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				E456EFDA192678F00036772B /* Main.storyboard */,
-				2D500B1A0D5A766900DBA0E3 /* AppController.h */,
-				2D500B1B0D5A766900DBA0E3 /* AppController.m */,
-				E4A77BCD1643186B00B93DAF /* TapViewController.h */,
-				E4A77BCE1643186B00B93DAF /* TapViewController.m */,
-				E457A5E216FB7D5E00204457 /* cross24.png */,
-				E457A5E316FB7D5E00204457 /* cross24@2x.png */,
-				188D407E0D6D2F160076AE1E /* TapView.h */,
-				188D407D0D6D2F160076AE1E /* TapView.m */,
 				4AFB75450DF7691E00DCF235 /* PickerViewController.h */,
 				4AFB75460DF7691E00DCF235 /* PickerViewController.m */,
-				E4F3DEAF1642BDDD00FA3D62 /* Default Images */,
-				E4F3DEB31642BDDD00FA3D62 /* Icons */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				1BFA8F9A0DA6BA0400E6B5C8 /* ReadMe.txt */,
+				188D407E0D6D2F160076AE1E /* TapView.h */,
+				188D407D0D6D2F160076AE1E /* TapView.m */,
+				E4A77BCD1643186B00B93DAF /* TapViewController.h */,
+				E4A77BCE1643186B00B93DAF /* TapViewController.m */,
+				04B6E9911BB740D70079A7B3 /* TapViewControllerDelegate.h */,
+				04B6E98F1BB73FB80079A7B3 /* TouchViewController.swift */,
+				04B6E98E1BB73FB70079A7B3 /* WiTap-Bridging-Header.h */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -148,6 +155,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
@@ -204,6 +212,7 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				2D500B1C0D5A766900DBA0E3 /* AppController.m in Sources */,
+				04B6E9901BB73FB80079A7B3 /* TouchViewController.swift in Sources */,
 				188D407F0D6D2F160076AE1E /* TapView.m in Sources */,
 				4AFB75470DF7691E00DCF235 /* PickerViewController.m in Sources */,
 				E4A77BD01643186B00B93DAF /* TapViewController.m in Sources */,
@@ -216,26 +225,33 @@
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = WiTap;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WiTap-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = WiTap;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WiTap-Bridging-Header.h";
 			};
 			name = Release;
 		};
