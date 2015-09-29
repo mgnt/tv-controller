@@ -47,8 +47,10 @@
 
 #import "AppController.h"
 
-#import "TapViewController.h"
+//#import "TapViewController.h"
 #import "PickerViewController.h"
+
+#import "WiTap-Swift.h"
 
 // The Bonjour service type consists of an IANA service name (see RFC 6335)
 // prefixed by an underscore (as per RFC 2782).
@@ -68,14 +70,16 @@
 static NSString * kWiTapBonjourType = @"_witap2._tcp.";
 
 @interface AppController () <
-    UIApplicationDelegate, 
-    TapViewControllerDelegate, 
-    PickerDelegate, 
-    NSNetServiceDelegate,
-    NSStreamDelegate
+UIApplicationDelegate,
+//TapViewControllerDelegate,
+TouchViewControllerDelegate,
+PickerDelegate,
+NSNetServiceDelegate,
+NSStreamDelegate
 >
 
-@property (nonatomic, strong, readwrite) TapViewController *    tapViewController;
+//@property (nonatomic, strong, readwrite) TapViewController *    tapViewController;
+@property (nonatomic, strong, readwrite) TouchViewController *    touchViewController;
 @property (nonatomic, strong, readwrite) NSNetService *         server;
 @property (nonatomic, assign, readwrite) BOOL                   isServerStarted;
 @property (nonatomic, copy,   readwrite) NSString *             registeredName;
@@ -98,13 +102,13 @@ static NSString * kWiTapBonjourType = @"_witap2._tcp.";
     
     // Get the root view controller (set up by the storyboard)
     
-    self.tapViewController = (TapViewController *) self.window.rootViewController;
-    assert([self.tapViewController isKindOfClass:[TapViewController class]]);
-    self.tapViewController.delegate = self;
+    self.touchViewController = (TouchViewController *) self.window.rootViewController;
+    assert([self.touchViewController isKindOfClass:[TouchViewController class]]);
+    self.touchViewController.delegate = self;
     
     // Show our window
     
-    self.window.rootViewController = self.tapViewController;
+    self.window.rootViewController = self.touchViewController;
     [self.window makeKeyAndVisible];
     
     // Create and advertise our server.  We only want the service to be registered on 
@@ -167,7 +171,7 @@ static NSString * kWiTapBonjourType = @"_witap2._tcp.";
 {
     // Reset our tap view state to avoid old taps appearing in the new game.
 
-    [self.tapViewController resetTouches];
+    [self.touchViewController resetTouches];
 
     // If there's a connection, shut it down.
 
@@ -215,7 +219,7 @@ static NSString * kWiTapBonjourType = @"_witap2._tcp.";
         // service name so that it can exclude us from the list).  If that's not the 
         // case then the picker remains stopped until -serverDidStart: runs.
         
-        self.picker = [self.tapViewController.storyboard instantiateViewControllerWithIdentifier:@"picker"];
+        self.picker = [self.touchViewController.storyboard instantiateViewControllerWithIdentifier:@"picker"];
         assert([self.picker isKindOfClass:[PickerViewController class]]);
         self.picker.type = kWiTapBonjourType;
         self.picker.delegate = self;
@@ -223,7 +227,7 @@ static NSString * kWiTapBonjourType = @"_witap2._tcp.";
             [self startPicker];
         }
 
-        [self.tapViewController presentViewController:self.picker animated:NO completion:nil];
+        [self.touchViewController presentViewController:self.picker animated:NO completion:nil];
     }
 }
 
@@ -231,7 +235,7 @@ static NSString * kWiTapBonjourType = @"_witap2._tcp.";
 {
     assert(self.picker != nil);
     
-    [self.tapViewController dismissViewControllerAnimated:NO completion:nil];
+    [self.touchViewController dismissViewControllerAnimated:NO completion:nil];
     [self.picker stop];
     self.picker = nil;
 }
@@ -319,11 +323,15 @@ static NSString * kWiTapBonjourType = @"_witap2._tcp.";
                 // NSStreamEventEndEncountered and NSStreamEventErrorOccurred case, 
                 // respectively.
             } else {
+                
+#define kTouchViewControllerTapItemCount 9
+                
                 // We received a remote tap update, forward it to the appropriate view
-                if ( (b >= 'A') && (b < ('A' + kTapViewControllerTapItemCount))) {
-                    [self.tapViewController remoteTouchDownOnItem:b - 'A'];
-                } else if ( (b >= 'a') && (b < ('a' + kTapViewControllerTapItemCount))) {
-                    [self.tapViewController remoteTouchUpOnItem:b - 'a'];
+                if ( (b >= 'A') && (b < ('A' + kTouchViewControllerTapItemCount))) {
+                    [self.touchViewController remoteTouchDownOnItem:b - 'A'];
+                } else if ( (b >= 'a') && (b < ('a' + kTouchViewControllerTapItemCount))) {
+                    [self.touchViewController remoteTouchUpOnItem:b - 'a'];
+                //} else if ( < detect other messages here > ) {
                 } else {
                     // Ignore the bogus input.  This is important because it allows us 
                     // to telnet in to the app in order to test its behaviour.  telnet 
@@ -392,25 +400,30 @@ static NSString * kWiTapBonjourType = @"_witap2._tcp.";
     }
 }
 
-- (void)tapViewController:(TapViewController *)controller localTouchDownOnItem:(NSUInteger)tapItemIndex
+- (void)touchViewController:(TouchViewController *)controller localTouchDownOnItem:(NSUInteger)tapItemIndex
 {
-    assert(controller == self.tapViewController);
+    assert(controller == self.touchViewController);
     #pragma unused(controller)
     [self send:(uint8_t) (tapItemIndex + 'A')];
 }
 
-- (void)tapViewController:(TapViewController *)controller localTouchUpOnItem:(NSUInteger)tapItemIndex
+- (void)touchViewController:(TouchViewController *)controller localTouchUpOnItem:(NSUInteger)tapItemIndex
 {
-    assert(controller == self.tapViewController);
+    assert(controller == self.touchViewController);
     #pragma unused(controller)
     [self send:(uint8_t) (tapItemIndex + 'a')];
 }
 
-- (void)tapViewControllerDidClose:(TapViewController *)controller
+- (void)touchViewControllerDidClose:(TouchViewController *)controller
 {
-    assert(controller == self.tapViewController);
+    assert(controller == self.touchViewController);
     #pragma unused(controller)
     [self setupForNewGame];
+}
+
+- (void)requestHeartbeat:(CFTimeInterval)requestTime {
+    // TODO: send requesTime as bytes (most likely 4 bytes)
+    // uint8_t is 1 byte.
 }
 
 #pragma mark - QServer delegate

@@ -16,13 +16,15 @@ import UIKit
     optional func touchViewController(controller: TouchViewController!, localTouchUpOnItem tapItemIndex: UInt)
     
     optional func touchViewControllerDidClose(controller: TouchViewController!)
+    
+    optional func requestHeartbeat(requestTime: CFTimeInterval)
 }
+
+let kTouchViewControllerTapItemCount = 9
 
 class TouchViewController: UIViewController, TapViewDelegate {
     
     var delegate: TouchViewControllerDelegate?
-    
-    let kTouchViewControllerTapItemCount = 9
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,12 @@ class TouchViewController: UIViewController, TapViewDelegate {
             assert(tapView!.isKindOfClass(TapView))
             tapView!.backgroundColor = UIColor(hue: CGFloat(tapViewTag)/CGFloat(kTouchViewControllerTapItemCount), saturation: 0.75, brightness: 0.75, alpha: 1.0)
         }
+        
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "requestHeartbeat", userInfo: nil, repeats: true)
+    }
+    
+    func requestHeartbeat() {
+        delegate?.requestHeartbeat?(CACurrentMediaTime())
     }
     
     @IBAction func closeButtonAction(sender: UIButton) {
@@ -69,6 +77,11 @@ class TouchViewController: UIViewController, TapViewDelegate {
             assert(tapView.isKindOfClass(TapView))
             tapView.resetTouches()
         }
+    }
+    
+    func receiveHeartbeat(requestTime: CFTimeInterval) {
+        let delay = CACurrentMediaTime() - requestTime
+        print("delay = \(delay)")
     }
     
     // MARK: Tap view delegate callbacks
