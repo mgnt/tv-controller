@@ -36,7 +36,9 @@ class TouchViewController: UIViewController, TapViewDelegate {
             tapView!.backgroundColor = UIColor(hue: CGFloat(tapViewTag)/CGFloat(kTouchViewControllerTapItemCount), saturation: 0.75, brightness: 0.75, alpha: 1.0)
         }
         
-        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "requestHeartbeat", userInfo: nil, repeats: true)
+        // having this going at the time the iOS device is first connecting causes the initial connection to fail
+        // TODO: start when game starts (after connection is established)
+        //NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "requestHeartbeat", userInfo: nil, repeats: true)
     }
     
     func requestHeartbeat() {
@@ -90,6 +92,10 @@ class TouchViewController: UIViewController, TapViewDelegate {
         assert(tapView.tag != 0)
         assert(tapView.tag <= kTouchViewControllerTapItemCount)
         delegate?.touchViewController?(self, localTouchDownOnItem: UInt(tapView.tag-1))
+        
+        
+        // test
+        delegate?.requestHeartbeat?(CACurrentMediaTime())
     }
     
     func tapViewLocalTouchUp(tapView: TapView!) {

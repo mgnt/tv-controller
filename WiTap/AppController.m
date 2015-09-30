@@ -312,32 +312,9 @@ NSStreamDelegate
         } break;
         
         case NSStreamEventHasBytesAvailable: {
-            uint8_t     b;
-            NSInteger   bytesRead;
-
             assert(stream == self.inputStream);
-
-            bytesRead = [self.inputStream read:&b maxLength:sizeof(uint8_t)];
-            if (bytesRead <= 0) {
-                // Do nothing; we'll handle EOF and error in the 
-                // NSStreamEventEndEncountered and NSStreamEventErrorOccurred case, 
-                // respectively.
-            } else {
-                
-#define kTouchViewControllerTapItemCount 9
-                
-                // We received a remote tap update, forward it to the appropriate view
-                if ( (b >= 'A') && (b < ('A' + kTouchViewControllerTapItemCount))) {
-                    [self.touchViewController remoteTouchDownOnItem:b - 'A'];
-                } else if ( (b >= 'a') && (b < ('a' + kTouchViewControllerTapItemCount))) {
-                    [self.touchViewController remoteTouchUpOnItem:b - 'a'];
-                //} else if ( < detect other messages here > ) {
-                } else {
-                    // Ignore the bogus input.  This is important because it allows us 
-                    // to telnet in to the app in order to test its behaviour.  telnet 
-                    // sends all sorts of odd characters, so ignoring them is a good thing.
-                }
-            }
+            
+            [self readBytesFromInputStream];
         } break;
 
         default:
@@ -348,6 +325,99 @@ NSStreamDelegate
         case NSStreamEventEndEncountered: {
             [self setupForNewGame];
         } break;
+    }
+}
+
+static NSMutableData *mutableData = nil; // TODO: reset mutableData when a new game is started (reset state)
+
+- (void)readBytesFromInputStream
+{
+    uint8_t buffer[1024]; // read up to 1024 bytes at a time
+    NSInteger   bytesRead;
+    
+    // important: don't call this more than necessary; it can block the main thread.
+    bytesRead = [self.inputStream read:buffer maxLength:sizeof(buffer)-1]; // allow 1 byte for null terminator
+    buffer[bytesRead] = '\0'; // add null terminator (just in case - may not be used)
+    
+    if (bytesRead <= 0) { // && mutableData.length == 0
+        // Do nothing; we'll handle EOF and error in the
+        // NSStreamEventEndEncountered and NSStreamEventErrorOccurred case,
+        // respectively.
+    } else {
+        // assume that we will receive partial messages
+        if (mutableData == nil) {
+            mutableData = [NSMutableData dataWithCapacity:1024]; // up to 1024 bytes for now
+        }
+        if (bytesRead >= 1) {
+            // append the data we just received
+            [mutableData appendBytes:buffer length:(NSUInteger)bytesRead]; // we know bytesRead > 0 because we checked earlier
+        }
+        [self processMutableData]; // (queue)
+    }
+}
+
+- (void)processMutableData {
+    
+#define kTouchViewControllerTapItemCount 9
+    
+    const uint8_t *fullBuffer = mutableData.bytes;
+    uint8_t b = (uint8_t)fullBuffer[0];
+    
+    // We received a remote tap update, forward it to the appropriate view
+    if ( (b >= 'A') && (b < ('A' + kTouchViewControllerTapItemCount))) {
+        NSUInteger item = b - 'A';
+        NSLog(@"touch down on %lu", item);
+        [self.touchViewController remoteTouchDownOnItem:item];
+        
+        // remove first byte
+        [mutableData replaceBytesInRange:NSMakeRange(0, 1) withBytes:NULL length:0];
+        
+        if (mutableData.length > 0) {
+            NSLog(@"Still more to process. Re-running...");
+            [self processMutableData];
+        }
+    } else if ( (b >= 'a') && (b < ('a' + kTouchViewControllerTapItemCount))) {
+        NSUInteger item = b - 'a';
+        NSLog(@"touch up on %lu", item);
+        
+        [self.touchViewController remoteTouchUpOnItem:item];
+        
+        // remove first byte
+        [mutableData replaceBytesInRange:NSMakeRange(0, 1) withBytes:NULL length:0];
+        
+        if (mutableData.length > 0) {
+            NSLog(@"Still more to process. Re-running...");
+            [self processMutableData];
+        }
+    } else if ( b == 'Z' ) {
+        // heartbeat. see if we have at least 8 more bytes for the double
+        
+        if (mutableData.length >= 9) {
+            
+            CFTimeInterval timeInSeconds = 0;
+            memcpy(&timeInSeconds, fullBuffer+1, sizeof timeInSeconds);
+            
+            NSLog(@"timeInSeconds = %lf", timeInSeconds);
+            
+            // TODO: sanity check: make sure the double received is the same as the double sent
+            
+            // remove first 9 bytes
+            [mutableData replaceBytesInRange:NSMakeRange(0, 9) withBytes:NULL length:0];
+            
+            if (mutableData.length > 0) {
+                NSLog(@"Still more to process. Re-running...");
+                [self processMutableData];
+            }
+        }
+        
+        // TODO: let 'z' mean we're getting an arbitrary length string, and allow it to be up to 1024 characters long
+        // up to the null terminator
+        
+    } else {
+        // Ignore the bogus input.  This is important because it allows us
+        // to telnet in to the app in order to test its behaviour.  telnet
+        // sends all sorts of odd characters, so ignoring them is a good thing.
+        NSLog(@"Note: Received bogus input");
     }
 }
 
@@ -381,20 +451,27 @@ NSStreamDelegate
     self.streamOpenCount = 0;
 }
 
+// Send 1 byte
 - (void)send:(uint8_t)message
 {
+    [self sendBuffer:&message maxLength:sizeof(message)];
+}
+
+// Send an arbitrary length buffer (array)
+- (void)sendBuffer:(const uint8_t *)buffer maxLength:(NSUInteger)len {
     assert(self.streamOpenCount == 2); // crashes here if we have not yet connected to a peer
-
-    // Only write to the stream if it has space available, otherwise we might block. 
-    // In a real app you have to handle this case properly but in this sample code it's 
-    // OK to ignore it; if the stream stops transferring data the user is going to have 
+    
+    // Only write to the stream if it has space available, otherwise we might block.
+    // In a real app you have to handle this case properly but in this sample code it's
+    // OK to ignore it; if the stream stops transferring data the user is going to have
     // to tap a lot before we fill up our stream buffer (-:
-
+    
     if ( [self.outputStream hasSpaceAvailable] ) {
         NSInteger   bytesWritten;
         
-        bytesWritten = [self.outputStream write:&message maxLength:sizeof(message)];
-        if (bytesWritten != sizeof(message)) {
+        bytesWritten = [self.outputStream write:buffer maxLength:len];
+        if (bytesWritten != (NSInteger)len) { // assume that len is not large
+            NSLog(@"Error: Failed to write entire message");
             [self setupForNewGame];
         }
     }
@@ -422,8 +499,19 @@ NSStreamDelegate
 }
 
 - (void)requestHeartbeat:(CFTimeInterval)requestTime {
-    // TODO: send requesTime as bytes (most likely 4 bytes)
-    // uint8_t is 1 byte.
+    // check that we've connected
+    if (self.streamOpenCount == 2) {
+        
+        // TODO: send requestTime as bytes (most likely 8 bytes, a double)
+        // uint8_t is 1 byte.
+        //uint8_t * message = (uint8_t *) &requestTime;
+        
+        NSMutableData *data = [NSMutableData dataWithCapacity:9];
+        char marker = 'Z';
+        [data appendBytes:&marker length:sizeof(marker)];
+        [data appendBytes:(uint8_t *) &requestTime length:sizeof(requestTime)];
+        [self sendBuffer:data.bytes maxLength:data.length];
+    }
 }
 
 #pragma mark - QServer delegate
