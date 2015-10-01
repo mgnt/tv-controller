@@ -26,6 +26,8 @@ class TouchViewController: UIViewController, TapViewDelegate {
     
     var delegate: TouchViewControllerDelegate?
     
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +40,7 @@ class TouchViewController: UIViewController, TapViewDelegate {
         
         // having this going at the time the iOS device is first connecting causes the initial connection to fail
         // TODO: start when game starts (after connection is established)
-        //NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "requestHeartbeat", userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "requestHeartbeat", userInfo: nil, repeats: true)
     }
     
     func requestHeartbeat() {
@@ -82,8 +84,9 @@ class TouchViewController: UIViewController, TapViewDelegate {
     }
     
     func receiveHeartbeat(requestTime: CFTimeInterval) {
-        let delay = CACurrentMediaTime() - requestTime
-        print("delay = \(delay)")
+        let delay = (CACurrentMediaTime() - requestTime) * 1000.0
+        //print("delay = \(delay)")
+        label.text = "\(delay) ms"
     }
     
     // MARK: Tap view delegate callbacks
@@ -95,7 +98,7 @@ class TouchViewController: UIViewController, TapViewDelegate {
         
         
         // test
-        delegate?.requestHeartbeat?(CACurrentMediaTime())
+        //delegate?.requestHeartbeat?(CACurrentMediaTime())
     }
     
     func tapViewLocalTouchUp(tapView: TapView!) {

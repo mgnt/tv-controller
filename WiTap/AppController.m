@@ -335,6 +335,8 @@ static NSMutableData *mutableData = nil; // TODO: reset mutableData when a new g
     uint8_t buffer[1024]; // read up to 1024 bytes at a time
     NSInteger   bytesRead;
     
+    NSLog(@"performing read...");
+    
     // important: don't call this more than necessary; it can block the main thread.
     bytesRead = [self.inputStream read:buffer maxLength:sizeof(buffer)-1]; // allow 1 byte for null terminator
     buffer[bytesRead] = '\0'; // add null terminator (just in case - may not be used)
@@ -390,7 +392,7 @@ static NSMutableData *mutableData = nil; // TODO: reset mutableData when a new g
             [self processMutableData];
         }
     } else if ( b == 'Z' ) {
-        // heartbeat. see if we have at least 8 more bytes for the double
+        // heartbeat request. see if we have at least 8 more bytes for the double
         
         if (mutableData.length >= 9) {
             
@@ -398,6 +400,32 @@ static NSMutableData *mutableData = nil; // TODO: reset mutableData when a new g
             memcpy(&timeInSeconds, fullBuffer+1, sizeof timeInSeconds);
             
             NSLog(@"timeInSeconds = %lf", timeInSeconds);
+            
+            // send it back
+            [self replyHeartbeat:timeInSeconds];
+            
+            // TODO: sanity check: make sure the double received is the same as the double sent
+            
+            // remove first 9 bytes
+            [mutableData replaceBytesInRange:NSMakeRange(0, 9) withBytes:NULL length:0];
+            
+            if (mutableData.length > 0) {
+                NSLog(@"Still more to process. Re-running...");
+                [self processMutableData];
+            }
+        }
+    } else if ( b == 'Y' ) {
+        // heartbeat reply. see if we have at least 8 more bytes for the double
+        
+        if (mutableData.length >= 9) {
+            
+            CFTimeInterval timeInSeconds = 0;
+            memcpy(&timeInSeconds, fullBuffer+1, sizeof timeInSeconds);
+            
+            NSLog(@"timeInSeconds = %lf", timeInSeconds);
+            
+            // successfully received heartbeat
+            [self.touchViewController receiveHeartbeat:timeInSeconds];
             
             // TODO: sanity check: make sure the double received is the same as the double sent
             
@@ -508,6 +536,22 @@ static NSMutableData *mutableData = nil; // TODO: reset mutableData when a new g
         
         NSMutableData *data = [NSMutableData dataWithCapacity:9];
         char marker = 'Z';
+        [data appendBytes:&marker length:sizeof(marker)];
+        [data appendBytes:(uint8_t *) &requestTime length:sizeof(requestTime)];
+        [self sendBuffer:data.bytes maxLength:data.length];
+    }
+}
+
+- (void)replyHeartbeat:(CFTimeInterval)requestTime {
+    // check that we've connected
+    if (self.streamOpenCount == 2) {
+        
+        // TODO: send requestTime as bytes (most likely 8 bytes, a double)
+        // uint8_t is 1 byte.
+        //uint8_t * message = (uint8_t *) &requestTime;
+        
+        NSMutableData *data = [NSMutableData dataWithCapacity:9];
+        char marker = 'Y';
         [data appendBytes:&marker length:sizeof(marker)];
         [data appendBytes:(uint8_t *) &requestTime length:sizeof(requestTime)];
         [self sendBuffer:data.bytes maxLength:data.length];
