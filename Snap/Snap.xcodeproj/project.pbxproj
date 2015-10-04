@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04042BF41BC18FDD00A57B3D /* Action_Man.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04042BF31BC18FDD00A57B3D /* Action_Man.ttf */; };
+		04042BF71BC1905800A57B3D /* UIFont+SnapAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04042BF61BC1905800A57B3D /* UIFont+SnapAdditions.swift */; };
+		04042BFB1BC1928800A57B3D /* UIButton+SnapAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04042BFA1BC1928800A57B3D /* UIButton+SnapAdditions.swift */; };
+		04042BFE1BC1961200A57B3D /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04042BFD1BC1961200A57B3D /* HostViewController.swift */; };
+		04042C011BC1962400A57B3D /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04042BFF1BC1962400A57B3D /* HostViewController.xib */; };
 		7B01146A151B14EA00A0616D /* TextField.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B011468151B14EA00A0616D /* TextField.png */; };
 		7B01146B151B14EA00A0616D /* TextField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B011469151B14EA00A0616D /* TextField@2x.png */; };
 		7B01146E151B2E6A00A0616D /* TableViewBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B01146C151B2E6A00A0616D /* TableViewBorder.png */; };
@@ -58,6 +63,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04042BF31BC18FDD00A57B3D /* Action_Man.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Action_Man.ttf; sourceTree = SOURCE_ROOT; };
+		04042BF51BC1905700A57B3D /* Snap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snap-Bridging-Header.h"; sourceTree = "<group>"; };
+		04042BF61BC1905800A57B3D /* UIFont+SnapAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont+SnapAdditions.swift"; path = "Snap/UIFont+SnapAdditions.swift"; sourceTree = "<group>"; };
+		04042BFA1BC1928800A57B3D /* UIButton+SnapAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+SnapAdditions.swift"; path = "Snap/UIButton+SnapAdditions.swift"; sourceTree = "<group>"; };
+		04042BFD1BC1961200A57B3D /* HostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
+		04042C001BC1962400A57B3D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Snap/en.lproj/HostViewController.xib; sourceTree = "<group>"; };
 		7B011468151B14EA00A0616D /* TextField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextField.png; sourceTree = "<group>"; };
 		7B011469151B14EA00A0616D /* TextField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TextField@2x.png"; sourceTree = "<group>"; };
 		7B01146C151B2E6A00A0616D /* TableViewBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewBorder.png; sourceTree = "<group>"; };
@@ -128,6 +139,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04042BFC1BC1929800A57B3D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04042BFA1BC1928800A57B3D /* UIButton+SnapAdditions.swift */,
+				04042BF61BC1905800A57B3D /* UIFont+SnapAdditions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		7B2B314014CC726A0002F476 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				7BF3E7CF151DF3680091A397 /* View Controllers */,
+				04042BFC1BC1929800A57B3D /* Extensions */,
 				7BF3E7D0151DF3720091A397 /* Other Sources */,
 				7B67D9E114C9C6AD00254619 /* Supporting Files */,
 				7B2B314014CC726A0002F476 /* Images */,
@@ -208,6 +229,7 @@
 		7B67D9E114C9C6AD00254619 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04042BF31BC18FDD00A57B3D /* Action_Man.ttf */,
 				7B67D9E314C9C6AD00254619 /* InfoPlist.strings */,
 				7B67D9E214C9C6AD00254619 /* Snap-Info.plist */,
 			);
@@ -218,6 +240,8 @@
 		7BF3E7CF151DF3680091A397 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04042BFD1BC1961200A57B3D /* HostViewController.swift */,
+				04042BFF1BC1962400A57B3D /* HostViewController.xib */,
 				7BF49E2E14E1FCF400AB8472 /* MainViewController.h */,
 				7BF49E2F14E1FCF400AB8472 /* MainViewController.m */,
 				7BF49E3314E1FD3200AB8472 /* MainViewController.xib */,
@@ -231,6 +255,7 @@
 				7B67D9E914C9C6AD00254619 /* AppDelegate.h */,
 				7B67D9EA14C9C6AD00254619 /* AppDelegate.m */,
 				7B67D9E614C9C6AD00254619 /* main.m */,
+				04042BF51BC1905700A57B3D /* Snap-Bridging-Header.h */,
 				7B67D9E814C9C6AD00254619 /* Snap-Prefix.pch */,
 			);
 			name = "Other Sources";
@@ -262,6 +287,7 @@
 		7B67D9CD14C9C6AC00254619 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = Hollance;
 			};
@@ -288,9 +314,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B67D9E514C9C6AD00254619 /* InfoPlist.strings in Resources */,
+				04042BF41BC18FDD00A57B3D /* Action_Man.ttf in Resources */,
 				7B2B321A14CC83760002F476 /* Felt.png in Resources */,
 				7B2B321B14CC83760002F476 /* Felt@2x.png in Resources */,
 				7BF49E3514E1FD3200AB8472 /* MainViewController.xib in Resources */,
+				04042C011BC1962400A57B3D /* HostViewController.xib in Resources */,
 				7BF49E6314E9096E00AB8472 /* ExitButton.png in Resources */,
 				7BF49E6414E9096E00AB8472 /* ExitButton@2x.png in Resources */,
 				7BF49E7514E90FE300AB8472 /* ExitButtonPressed.png in Resources */,
@@ -340,6 +368,9 @@
 			files = (
 				7B67D9E714C9C6AD00254619 /* main.m in Sources */,
 				7B67D9EB14C9C6AD00254619 /* AppDelegate.m in Sources */,
+				04042BFE1BC1961200A57B3D /* HostViewController.swift in Sources */,
+				04042BFB1BC1928800A57B3D /* UIButton+SnapAdditions.swift in Sources */,
+				04042BF71BC1905800A57B3D /* UIFont+SnapAdditions.swift in Sources */,
 				7BF49E3114E1FCF400AB8472 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +378,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		04042BFF1BC1962400A57B3D /* HostViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04042C001BC1962400A57B3D /* en */,
+			);
+			name = HostViewController.xib;
+			sourceTree = "<group>";
+		};
 		7B67D9E314C9C6AD00254619 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -387,7 +426,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -406,7 +445,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -417,12 +456,15 @@
 		7B67D9F814C9C6AD00254619 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Snap/Snap-Prefix.pch";
 				INFOPLIST_FILE = "Snap/Snap-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Snap-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = app;
@@ -432,12 +474,14 @@
 		7B67D9F914C9C6AD00254619 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Snap/Snap-Prefix.pch";
 				INFOPLIST_FILE = "Snap/Snap-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Snap-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = app;
