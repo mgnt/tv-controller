@@ -305,7 +305,7 @@
                                     <outlet property="delegate" destination="5hX-Vj-wo7" id="Kmo-7N-Fbb"/>
                                 </connections>
                             </view>
-                            <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CpM-f1-GKy" customClass="TapView">
+                            <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CpM-f1-GKy" customClass="BoxView" customModule="WiTap" customModuleProvider="target">
                                 <rect key="frame" x="213" y="189" width="107" height="189"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
