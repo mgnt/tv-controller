@@ -1,21 +1,28 @@
 
 import UIKit
 
-@objc protocol HostViewControllerDelegate {
+@objc protocol JoinViewControllerDelegate {
     
-    func hostViewControllerDidCancel(controller: HostViewController)
+    func joinViewControllerDidCancel(controller: JoinViewController)
 }
 
-class HostViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class JoinViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+    
+    var delegate: JoinViewControllerDelegate?
     
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var tableView: UILabel!
     
-    var delegate: HostViewControllerDelegate?
+    @IBOutlet var waitView: UILabel! // strong by default
+    @IBOutlet weak var waitLabel: UILabel!
+    
+    deinit {
+        print("deinit \(self)")
+        waitView = nil // TODO: test
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +30,10 @@ class HostViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.headingLabel.font = UIFont.tvc_snapFont(24.0)
         self.nameLabel.font = UIFont.tvc_snapFont(16.0)
         self.statusLabel.font = UIFont.tvc_snapFont(16.0)
+        self.waitLabel.font = UIFont.tvc_snapFont(18.0)
         self.nameTextField.font = UIFont.tvc_snapFont(20.0)
         
-        self.startButton.tvc_applySnapStyle()
-        
-        let gestureRecognizer = UITapGestureRecognizer(target: nameTextField, action: "resignFirstResponder")
+        let gestureRecognizer = UITapGestureRecognizer(target: self.nameTextField, action: "resignFirstResponder")
         gestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(gestureRecognizer)
     }
@@ -36,11 +42,8 @@ class HostViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return UIInterfaceOrientationMask.Landscape
     }
     
-    @IBAction func startAction(sender: UIButton) {
-    }
-    
     @IBAction func exitAction(sender: UIButton) {
-        delegate?.hostViewControllerDidCancel(self)
+        delegate?.joinViewControllerDidCancel(self)
     }
     
     // MARK: - UITableViewDataSource
@@ -58,9 +61,5 @@ class HostViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false
-    }
-    
-    deinit {
-        print("dealloc \(self)")
     }
 }

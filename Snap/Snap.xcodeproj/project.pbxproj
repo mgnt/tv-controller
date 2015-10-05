@@ -12,6 +12,10 @@
 		04042BFB1BC1928800A57B3D /* UIButton+SnapAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04042BFA1BC1928800A57B3D /* UIButton+SnapAdditions.swift */; };
 		04042BFE1BC1961200A57B3D /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04042BFD1BC1961200A57B3D /* HostViewController.swift */; };
 		04042C011BC1962400A57B3D /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04042BFF1BC1962400A57B3D /* HostViewController.xib */; };
+		04042C031BC1E83D00A57B3D /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04042C021BC1E83D00A57B3D /* JoinViewController.swift */; };
+		04042C061BC1E84F00A57B3D /* JoinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04042C041BC1E84F00A57B3D /* JoinViewController.xib */; };
+		049F3E6A1BC24C3D00877932 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049F3E691BC24C3D00877932 /* MultipeerConnectivity.framework */; };
+		049F3E6D1BC24CC500877932 /* TVCServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F3E6C1BC24CC500877932 /* TVCServer.swift */; };
 		7B01146A151B14EA00A0616D /* TextField.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B011468151B14EA00A0616D /* TextField.png */; };
 		7B01146B151B14EA00A0616D /* TextField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B011469151B14EA00A0616D /* TextField@2x.png */; };
 		7B01146E151B2E6A00A0616D /* TableViewBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B01146C151B2E6A00A0616D /* TableViewBorder.png */; };
@@ -69,6 +73,10 @@
 		04042BFA1BC1928800A57B3D /* UIButton+SnapAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+SnapAdditions.swift"; path = "Snap/UIButton+SnapAdditions.swift"; sourceTree = "<group>"; };
 		04042BFD1BC1961200A57B3D /* HostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		04042C001BC1962400A57B3D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Snap/en.lproj/HostViewController.xib; sourceTree = "<group>"; };
+		04042C021BC1E83D00A57B3D /* JoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		04042C051BC1E84F00A57B3D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Snap/en.lproj/JoinViewController.xib; sourceTree = "<group>"; };
+		049F3E691BC24C3D00877932 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		049F3E6C1BC24CC500877932 /* TVCServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVCServer.swift; sourceTree = "<group>"; };
 		7B011468151B14EA00A0616D /* TextField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextField.png; sourceTree = "<group>"; };
 		7B011469151B14EA00A0616D /* TextField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TextField@2x.png"; sourceTree = "<group>"; };
 		7B01146C151B2E6A00A0616D /* TableViewBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewBorder.png; sourceTree = "<group>"; };
@@ -129,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049F3E6A1BC24C3D00877932 /* MultipeerConnectivity.framework in Frameworks */,
 				7B739AC614EC9DFE00A07C50 /* AVFoundation.framework in Frameworks */,
 				7B67D9DB14C9C6AD00254619 /* UIKit.framework in Frameworks */,
 				7B67D9DD14C9C6AD00254619 /* Foundation.framework in Frameworks */,
@@ -146,6 +155,14 @@
 				04042BF61BC1905800A57B3D /* UIFont+SnapAdditions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		049F3E6B1BC24C9C00877932 /* TVC Networking */ = {
+			isa = PBXGroup;
+			children = (
+				049F3E6C1BC24CC500877932 /* TVCServer.swift */,
+			);
+			name = "TVC Networking";
 			sourceTree = "<group>";
 		};
 		7B2B314014CC726A0002F476 /* Images */ = {
@@ -197,6 +214,7 @@
 		7B67D9CB14C9C6AC00254619 = {
 			isa = PBXGroup;
 			children = (
+				049F3E6B1BC24C9C00877932 /* TVC Networking */,
 				7BF3E7CF151DF3680091A397 /* View Controllers */,
 				04042BFC1BC1929800A57B3D /* Extensions */,
 				7BF3E7D0151DF3720091A397 /* Other Sources */,
@@ -218,6 +236,7 @@
 		7B67D9D914C9C6AD00254619 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				049F3E691BC24C3D00877932 /* MultipeerConnectivity.framework */,
 				7B739AC514EC9DFE00A07C50 /* AVFoundation.framework */,
 				7B67D9DE14C9C6AD00254619 /* CoreGraphics.framework */,
 				7B67D9DC14C9C6AD00254619 /* Foundation.framework */,
@@ -242,6 +261,8 @@
 			children = (
 				04042BFD1BC1961200A57B3D /* HostViewController.swift */,
 				04042BFF1BC1962400A57B3D /* HostViewController.xib */,
+				04042C021BC1E83D00A57B3D /* JoinViewController.swift */,
+				04042C041BC1E84F00A57B3D /* JoinViewController.xib */,
 				7BF49E2E14E1FCF400AB8472 /* MainViewController.h */,
 				7BF49E2F14E1FCF400AB8472 /* MainViewController.m */,
 				7BF49E3314E1FD3200AB8472 /* MainViewController.xib */,
@@ -343,6 +364,7 @@
 				7BF49EAA14EBBB7300AB8472 /* Icon-Small@2x.png in Resources */,
 				7BF49EAB14EBBB7300AB8472 /* Icon.png in Resources */,
 				7BF49EAC14EBBB7300AB8472 /* Icon@2x.png in Resources */,
+				04042C061BC1E84F00A57B3D /* JoinViewController.xib in Resources */,
 				7BF49EAD14EBBB7300AB8472 /* iTunesArtwork in Resources */,
 				7BF49EB014EBBC7400AB8472 /* Default.png in Resources */,
 				7BF49EB114EBBC7400AB8472 /* Default@2x.png in Resources */,
@@ -372,6 +394,8 @@
 				04042BFB1BC1928800A57B3D /* UIButton+SnapAdditions.swift in Sources */,
 				04042BF71BC1905800A57B3D /* UIFont+SnapAdditions.swift in Sources */,
 				7BF49E3114E1FCF400AB8472 /* MainViewController.m in Sources */,
+				049F3E6D1BC24CC500877932 /* TVCServer.swift in Sources */,
+				04042C031BC1E83D00A57B3D /* JoinViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +408,14 @@
 				04042C001BC1962400A57B3D /* en */,
 			);
 			name = HostViewController.xib;
+			sourceTree = "<group>";
+		};
+		04042C041BC1E84F00A57B3D /* JoinViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04042C051BC1E84F00A57B3D /* en */,
+			);
+			name = JoinViewController.xib;
 			sourceTree = "<group>";
 		};
 		7B67D9E314C9C6AD00254619 /* InfoPlist.strings */ = {
