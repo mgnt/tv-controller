@@ -67,14 +67,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04042BF31BC18FDD00A57B3D /* Action_Man.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Action_Man.ttf; sourceTree = SOURCE_ROOT; };
+		04042BF31BC18FDD00A57B3D /* Action_Man.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Action_Man.ttf; sourceTree = "<group>"; };
 		04042BF51BC1905700A57B3D /* Snap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snap-Bridging-Header.h"; sourceTree = "<group>"; };
-		04042BF61BC1905800A57B3D /* UIFont+SnapAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont+SnapAdditions.swift"; path = "Snap/UIFont+SnapAdditions.swift"; sourceTree = "<group>"; };
-		04042BFA1BC1928800A57B3D /* UIButton+SnapAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+SnapAdditions.swift"; path = "Snap/UIButton+SnapAdditions.swift"; sourceTree = "<group>"; };
+		04042BF61BC1905800A57B3D /* UIFont+SnapAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+SnapAdditions.swift"; sourceTree = "<group>"; };
+		04042BFA1BC1928800A57B3D /* UIButton+SnapAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+SnapAdditions.swift"; sourceTree = "<group>"; };
 		04042BFD1BC1961200A57B3D /* HostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
-		04042C001BC1962400A57B3D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Snap/en.lproj/HostViewController.xib; sourceTree = "<group>"; };
+		04042C001BC1962400A57B3D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HostViewController.xib; sourceTree = "<group>"; };
 		04042C021BC1E83D00A57B3D /* JoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
-		04042C051BC1E84F00A57B3D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Snap/en.lproj/JoinViewController.xib; sourceTree = "<group>"; };
+		04042C051BC1E84F00A57B3D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/JoinViewController.xib; sourceTree = "<group>"; };
 		049F3E691BC24C3D00877932 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 		049F3E6C1BC24CC500877932 /* TVCServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVCServer.swift; sourceTree = "<group>"; };
 		7B011468151B14EA00A0616D /* TextField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextField.png; sourceTree = "<group>"; };
@@ -95,13 +95,13 @@
 		7B67D9DE14C9C6AD00254619 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7B67D9E214C9C6AD00254619 /* Snap-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Snap-Info.plist"; sourceTree = "<group>"; };
 		7B67D9E414C9C6AD00254619 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7B67D9E614C9C6AD00254619 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Snap/main.m; sourceTree = "<group>"; };
-		7B67D9E814C9C6AD00254619 /* Snap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Snap-Prefix.pch"; path = "Snap/Snap-Prefix.pch"; sourceTree = "<group>"; };
-		7B67D9E914C9C6AD00254619 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Snap/AppDelegate.h; sourceTree = "<group>"; };
-		7B67D9EA14C9C6AD00254619 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Snap/AppDelegate.m; sourceTree = "<group>"; };
+		7B67D9E614C9C6AD00254619 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7B67D9E814C9C6AD00254619 /* Snap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snap-Prefix.pch"; sourceTree = "<group>"; };
+		7B67D9E914C9C6AD00254619 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7B67D9EA14C9C6AD00254619 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7B739AC514EC9DFE00A07C50 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		7BF49E2E14E1FCF400AB8472 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Snap/MainViewController.h; sourceTree = "<group>"; };
-		7BF49E2F14E1FCF400AB8472 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Snap/MainViewController.m; sourceTree = "<group>"; };
+		7BF49E2E14E1FCF400AB8472 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		7BF49E2F14E1FCF400AB8472 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		7BF49E3414E1FD3200AB8472 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController.xib; sourceTree = "<group>"; };
 		7BF49E6114E9096E00AB8472 /* ExitButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExitButton.png; sourceTree = "<group>"; };
 		7BF49E6214E9096E00AB8472 /* ExitButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ExitButton@2x.png"; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 				04042BFA1BC1928800A57B3D /* UIButton+SnapAdditions.swift */,
 				04042BF61BC1905800A57B3D /* UIFont+SnapAdditions.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		049F3E6B1BC24C9C00877932 /* TVC Networking */ = {
@@ -162,7 +162,7 @@
 			children = (
 				049F3E6C1BC24CC500877932 /* TVCServer.swift */,
 			);
-			name = "TVC Networking";
+			path = "TVC Networking";
 			sourceTree = "<group>";
 		};
 		7B2B314014CC726A0002F476 /* Images */ = {
@@ -192,7 +192,6 @@
 				7BF49EA314EBBB7300AB8472 /* Icon-Small@2x.png */,
 				7BF49EA414EBBB7300AB8472 /* Icon.png */,
 				7BF49EA514EBBB7300AB8472 /* Icon@2x.png */,
-				7BF49EA614EBBB7300AB8472 /* iTunesArtwork */,
 				7BF49E8414EB9AD900AB8472 /* Logo A.png */,
 				7BF49E8514EB9AD900AB8472 /* Logo A@2x.png */,
 				7BF49E8614EB9AD900AB8472 /* Logo Joker.png */,
@@ -207,6 +206,7 @@
 				7B01146D151B2E6A00A0616D /* TableViewBorder@2x.png */,
 				7B011468151B14EA00A0616D /* TextField.png */,
 				7B011469151B14EA00A0616D /* TextField@2x.png */,
+				7BF49EA614EBBB7300AB8472 /* iTunesArtwork */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -214,14 +214,14 @@
 		7B67D9CB14C9C6AC00254619 = {
 			isa = PBXGroup;
 			children = (
+				04042BFC1BC1929800A57B3D /* Extensions */,
+				7B67D9D914C9C6AD00254619 /* Frameworks */,
+				7B2B314014CC726A0002F476 /* Images */,
+				7BF3E7D0151DF3720091A397 /* Other Sources */,
+				7B67D9D714C9C6AD00254619 /* Products */,
+				7B67D9E114C9C6AD00254619 /* Supporting Files */,
 				049F3E6B1BC24C9C00877932 /* TVC Networking */,
 				7BF3E7CF151DF3680091A397 /* View Controllers */,
-				04042BFC1BC1929800A57B3D /* Extensions */,
-				7BF3E7D0151DF3720091A397 /* Other Sources */,
-				7B67D9E114C9C6AD00254619 /* Supporting Files */,
-				7B2B314014CC726A0002F476 /* Images */,
-				7B67D9D914C9C6AD00254619 /* Frameworks */,
-				7B67D9D714C9C6AD00254619 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,8 +252,7 @@
 				7B67D9E314C9C6AD00254619 /* InfoPlist.strings */,
 				7B67D9E214C9C6AD00254619 /* Snap-Info.plist */,
 			);
-			name = "Supporting Files";
-			path = Snap;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		7BF3E7CF151DF3680091A397 /* View Controllers */ = {
@@ -267,7 +266,7 @@
 				7BF49E2F14E1FCF400AB8472 /* MainViewController.m */,
 				7BF49E3314E1FD3200AB8472 /* MainViewController.xib */,
 			);
-			name = "View Controllers";
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		7BF3E7D0151DF3720091A397 /* Other Sources */ = {
@@ -275,11 +274,11 @@
 			children = (
 				7B67D9E914C9C6AD00254619 /* AppDelegate.h */,
 				7B67D9EA14C9C6AD00254619 /* AppDelegate.m */,
-				7B67D9E614C9C6AD00254619 /* main.m */,
 				04042BF51BC1905700A57B3D /* Snap-Bridging-Header.h */,
 				7B67D9E814C9C6AD00254619 /* Snap-Prefix.pch */,
+				7B67D9E614C9C6AD00254619 /* main.m */,
 			);
-			name = "Other Sources";
+			path = "Other Sources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,6 +407,7 @@
 				04042C001BC1962400A57B3D /* en */,
 			);
 			name = HostViewController.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 		04042C041BC1E84F00A57B3D /* JoinViewController.xib */ = {
@@ -416,6 +416,7 @@
 				04042C051BC1E84F00A57B3D /* en */,
 			);
 			name = JoinViewController.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 		7B67D9E314C9C6AD00254619 /* InfoPlist.strings */ = {
@@ -424,6 +425,7 @@
 				7B67D9E414C9C6AD00254619 /* en */,
 			);
 			name = InfoPlist.strings;
+			path = .;
 			sourceTree = "<group>";
 		};
 		7BF49E3314E1FD3200AB8472 /* MainViewController.xib */ = {
@@ -432,7 +434,7 @@
 				7BF49E3414E1FD3200AB8472 /* en */,
 			);
 			name = MainViewController.xib;
-			path = Snap;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -490,12 +492,12 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Snap/Snap-Prefix.pch";
-				INFOPLIST_FILE = "Snap/Snap-Info.plist";
+				GCC_PREFIX_HEADER = "Other Sources/Snap-Prefix.pch";
+				INFOPLIST_FILE = "Supporting Files/Snap-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Snap-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Other Sources/Snap-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = "-Wall";
@@ -508,12 +510,12 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Snap/Snap-Prefix.pch";
-				INFOPLIST_FILE = "Snap/Snap-Info.plist";
+				GCC_PREFIX_HEADER = "Other Sources/Snap-Prefix.pch";
+				INFOPLIST_FILE = "Supporting Files/Snap-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Snap-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Other Sources/Snap-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = app;
