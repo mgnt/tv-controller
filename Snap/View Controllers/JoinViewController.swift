@@ -19,13 +19,31 @@ class JoinViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet var waitView: UILabel! // strong by default
     @IBOutlet weak var waitLabel: UILabel!
     
+    var client: TVCClient
+    
     deinit {
         print("deinit \(self)")
         waitView = nil // TODO: test
     }
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        client = TVCClient()
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        client.startSearchingForServers("Some Session ID") // ?
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        client = TVCClient()
+        super.init(coder: aDecoder)
+        
+        client.startSearchingForServers("Some Session ID") // ?
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nameTextField.placeholder = "Some client display name" // client.session.displayName
         
         self.headingLabel.font = UIFont.tvc_snapFont(24.0)
         self.nameLabel.font = UIFont.tvc_snapFont(16.0)

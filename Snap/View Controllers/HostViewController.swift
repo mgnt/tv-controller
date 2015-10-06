@@ -17,8 +17,34 @@ class HostViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var delegate: HostViewControllerDelegate?
     
+    var server: TVCServer
+    
+    func setup() {
+        server.maxClients = 4 // TV + 4 players
+        server.startAcceptingConnections("Some Session ID") // TODO: set sessionID
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        server = TVCServer()
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        server = TVCServer()
+        
+        super.init(coder: aDecoder)
+        
+        setup()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.nameTextField.placeholder = "Some Display Name" // session.displayName
+        self.tableView.reloadData() // TODO: may not be necessary
         
         self.headingLabel.font = UIFont.tvc_snapFont(24.0)
         self.nameLabel.font = UIFont.tvc_snapFont(16.0)

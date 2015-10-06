@@ -1,55 +1,57 @@
 
 import MultipeerConnectivity
 
-class TVCServer: NSObject, MCNearbyServiceAdvertiserDelegate, MCSessionDelegate {
+class TVCClient: NSObject, MCNearbyServiceBrowserDelegate, MCSessionDelegate {
     
-    var maxClients: Int
-    var connectedClients: Array<String> // mutable
+    var availableServers: Array<String> // array of peerIDs
+    
     var session: MCSession // ?
     
-    //MCNearbyServiceAdvertiser
+    //MCNearbyServiceBrowser ?
     
     override init() {
-        maxClients = 4 // TV + up to four players, for now
-        connectedClients = Array()
-        session = MCSession(peer: MCPeerID(displayName: "Some Display Name")) // TODO
+        availableServers = Array()
+        
+        // client mode? available?
+        // MCPeerID: An internal number used to identify the different devices in the session.
+        // Peers will get different IDs each time the game is run.
+        session = MCSession(peer: MCPeerID(displayName: "Some Client Display Name")) // TODO: customize name
         
         super.init()
         
         session.delegate = self // ?
     }
     
-    /// Broadcast availability of the service named by sessionID.
-    /// TODO
-    func startAcceptingConnections(sessionID: String) {
-        // TODO: customize name
+    /// Start browsing with client session mode, set delegate to self, and set available to true
+    func startSearchingForServers(sessionID: String) {
+        // TODO
+        
         // TODO: use sessionID
-        
-//        session = MCSession(peer: MCPeerID(displayName: "Some Name")) // server mode? available?
-//        session.delegate = self
-        
-        // TODO: start broadcasting
+        // start browsing...
     }
     
-    // MARK: - MCNearbyServiceAdvertiserDelegate
+    // MARK: - MCNearbyServiceBrowserDelegate
     
-    // Incoming invitation request.  Call the invitationHandler block with YES
-    // and a valid session to connect the inviting peer to the session.
-    func advertiser(advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: NSData?, invitationHandler: (Bool, MCSession) -> Void)
-    {
-        print("TVCServer: connection request from peer \(peerID)")
+    // Found a nearby advertising peer.
+    func browser(browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
+        print("TVCClient: browser \(browser) found peer \(peerID) discoveryInfo \(info)")
     }
     
-    // Advertising did not start due to an error.
-    func advertiser(advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: NSError) {
-        print("TVCServer: advertising did not start due to error \(error)")
+    // A nearby peer has stopped advertising.
+    func browser(browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
+        print("TVCClient: browser \(browser) lostPeer \(peerID)")
+    }
+    
+    // Browsing did not start due to an error.
+    func browser(browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: NSError) {
+        print("TVCClient: browser \(browser) error \(error)")
     }
     
     // MARK: - MCSessionDelegate
     
     // Remote peer changed state.
     func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState) {
-        print("TVCServer: peer \(peerID) changed state \(state)")
+        print("TVCClient: peer \(peerID) changed state \(state)")
     }
     
     // Received data from remote peer.

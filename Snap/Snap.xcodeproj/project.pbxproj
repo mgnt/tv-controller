@@ -14,6 +14,7 @@
 		04042C011BC1962400A57B3D /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04042BFF1BC1962400A57B3D /* HostViewController.xib */; };
 		04042C031BC1E83D00A57B3D /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04042C021BC1E83D00A57B3D /* JoinViewController.swift */; };
 		04042C061BC1E84F00A57B3D /* JoinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04042C041BC1E84F00A57B3D /* JoinViewController.xib */; };
+		0455C13D1BC3A70F00D63C31 /* TVCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455C13C1BC3A70F00D63C31 /* TVCClient.swift */; };
 		049F3E6A1BC24C3D00877932 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049F3E691BC24C3D00877932 /* MultipeerConnectivity.framework */; };
 		049F3E6D1BC24CC500877932 /* TVCServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F3E6C1BC24CC500877932 /* TVCServer.swift */; };
 		7B01146A151B14EA00A0616D /* TextField.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B011468151B14EA00A0616D /* TextField.png */; };
@@ -75,6 +76,7 @@
 		04042C001BC1962400A57B3D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HostViewController.xib; sourceTree = "<group>"; };
 		04042C021BC1E83D00A57B3D /* JoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		04042C051BC1E84F00A57B3D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/JoinViewController.xib; sourceTree = "<group>"; };
+		0455C13C1BC3A70F00D63C31 /* TVCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVCClient.swift; sourceTree = "<group>"; };
 		049F3E691BC24C3D00877932 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 		049F3E6C1BC24CC500877932 /* TVCServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVCServer.swift; sourceTree = "<group>"; };
 		7B011468151B14EA00A0616D /* TextField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextField.png; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				049F3E6C1BC24CC500877932 /* TVCServer.swift */,
+				0455C13C1BC3A70F00D63C31 /* TVCClient.swift */,
 			);
 			path = "TVC Networking";
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 			files = (
 				7B67D9E714C9C6AD00254619 /* main.m in Sources */,
 				7B67D9EB14C9C6AD00254619 /* AppDelegate.m in Sources */,
+				0455C13D1BC3A70F00D63C31 /* TVCClient.swift in Sources */,
 				04042BFE1BC1961200A57B3D /* HostViewController.swift in Sources */,
 				04042BFB1BC1928800A57B3D /* UIButton+SnapAdditions.swift in Sources */,
 				04042BF71BC1905800A57B3D /* UIFont+SnapAdditions.swift in Sources */,
