@@ -29,6 +29,12 @@ class TVCServer: NSObject, NSNetServiceDelegate, NSStreamDelegate {
     var connectedClients: Array<String> // mutable
     var server: NSNetService
     var isServerStarted = false
+    var registeredName: String?
+    var inputStream: NSInputStream?
+    var outputStream: NSOutputStream?
+    
+    // TODO: use a delegate pattern instead of referencing a view controller directly
+    var picker: UIViewController? // PickerViewController
     
 //    var session: MCSession // ?
     
@@ -45,6 +51,8 @@ class TVCServer: NSObject, NSNetServiceDelegate, NSStreamDelegate {
         self.server.includesPeerToPeer = true
         
         super.init()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationDidEnterBackgroundNotification:", name: UIApplicationDidEnterBackgroundNotification, object: nil)
         
         self.server.delegate = self
         
@@ -64,6 +72,31 @@ class TVCServer: NSObject, NSNetServiceDelegate, NSStreamDelegate {
         // TODO:
         // Set up for a new game, which presents a Bonjour browser that displays other
         // available games.
+    }
+    
+    func applicationDidEnterBackgroundNotification(notification: NSNotification) {
+        
+        // If there's a game playing, shut it down.  Whether this is the right thing to do
+        // depends on your app.  In some cases it might be more sensible to leave the connection
+        // in place for a short while to see if the user comes back to the app.  This issue is
+        // discussed in more depth in Technote 2277 "Networking and Multitasking".
+        //
+        // <https://developer.apple.com/library/ios/#technotes/tn2277/_index.html>
+        
+        if (inputStream != nil) {
+            // TODO: setup for new game (shut down previous game)
+//            [self setupForNewGame];
+        }
+        
+        // Quiesce the server and service browser, if any.
+        
+        server.stop()
+        isServerStarted = false
+        registeredName = nil // Note that registeredName can vary depending on whether there are name conflicts
+        if (picker != nil) {
+            // TODO: use a delegat pattern instead of using a view controller directly
+//            picker.stop()
+        }
     }
     
     // MARK: - MCNearbyServiceAdvertiserDelegate
