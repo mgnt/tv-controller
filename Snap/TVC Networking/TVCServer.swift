@@ -54,9 +54,15 @@ class TVCServer: NSObject, NSNetServiceDelegate, NSStreamDelegate {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationDidEnterBackgroundNotification:", name: UIApplicationDidEnterBackgroundNotification, object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForegroundNotification:", name: UIApplicationWillEnterForegroundNotification, object: nil)
+        
         self.server.delegate = self
         
 //        session.delegate = self // ?
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     /// Broadcast availability of the service named by sessionID.
@@ -96,6 +102,19 @@ class TVCServer: NSObject, NSNetServiceDelegate, NSStreamDelegate {
         if (picker != nil) {
             // TODO: use a delegat pattern instead of using a view controller directly
 //            picker.stop()
+        }
+    }
+    
+    func applicationWillEnterForegroundNotification(notification: NSNotification) {
+        
+        // Quicken the server.  Once this is done it will quicken the picker, if there's one up.
+        
+        assert( isServerStarted == false )
+        
+        server.publishWithOptions(NSNetServiceOptions.ListenForConnections)
+        isServerStarted = true
+        if (registeredName != nil) {
+//            self.startPicker()
         }
     }
     
