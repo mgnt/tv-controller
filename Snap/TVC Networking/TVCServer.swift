@@ -118,6 +118,40 @@ class TVCServer: NSObject, NSNetServiceDelegate, NSStreamDelegate {
         }
     }
     
+    // TODO: use delegate
+    // 1. Reset game state e.g. touchViewController.resetTouches()
+    func setupForNewGame()
+    {
+        // If there's a connection, shut it down.
+//        closeStreams()
+        
+        // If our server is deregistered, reregister it.
+        if isServerStarted == false {
+            server.publishWithOptions(.ListenForConnections)
+            isServerStarted = true
+        }
+        
+        // And show the service picker.
+//        presentPicker()
+    }
+    
+    // MARK: - Picker management
+    // TODO: use delegate
+    
+    func startPicker() {
+        assert(registeredName != nil)
+        
+        // Tell the picker about our registration. It uses this to
+        // a) filter out our game from the results, and
+        // b) display our game name in its table view header.
+//        picker.localService = self.server
+        
+        // Start it up.
+//        picker.start()
+    }
+    
+//    func presentPicker
+    
     // MARK: - MCNearbyServiceAdvertiserDelegate
     
     // Incoming invitation request.  Call the invitationHandler block with YES
