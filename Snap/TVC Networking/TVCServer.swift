@@ -150,7 +150,58 @@ class TVCServer: NSObject, NSNetServiceDelegate, NSStreamDelegate {
 //        picker.start()
     }
     
-//    func presentPicker
+    func presentPicker() {
+        if self.picker != nil {
+            // If the picker is already on-screen then we're here because of a connection failure.
+            // In that case, we just cancel the picker's connection UI and the user can choose another service.
+//            picker.cancelConnect()
+        } else {
+            // Create the service picker and put it up on screen. We only start the picker
+            // if our server has completed its registration (the picker needs to know our
+            // service name so that it can exclude us from the list). If that's not the
+            // case then the picker remains stopped until serverDidStart: runs.
+            
+            // In the TVC architecture, the tvOS device always advertises and the
+            // iOS device always browses, so we can start the server sooner: we won't have
+            // a service name because we're only browsing.
+            
+//            picker = touchViewController.storyboard.instantiateViewController(identifier: "picker")
+//            assert(picker is PickerViewController)
+//            picker.type = kSnapBonjourType
+//            picker.delegate = self
+            if self.registeredName != nil {
+                startPicker()
+            }
+            
+//            touchViewController.presentViewController(picker, animated: false, completion: nil)
+        }
+    }
+    
+    func dismissPicker() {
+        assert(picker != nil)
+        
+//        touchViewController.dismissViewController(animated: false, completion: nil)
+//        picker.stop()
+        picker = nil
+    }
+    
+    // TODO: move to TVCClient
+    // Called by the delegate when the user has chosen a service for us to connect to.
+    // The delegate is already displaying its connection-in-progress UI.
+    func connectToService(service: NSNetService) {
+        var success = false
+        var inStream: NSInputStream?
+        var outStream: NSOutputStream?
+        
+        // Create and open streams for the service.
+        //
+        // getInputStream:outputStream: just creates the streams, it doesn't hit the
+        // network, and thus it shouldn't fail under normal circumstances (in fact, its
+        // CFNetService equivalent, CFStreamCreatePairWithSocketToNetService, returns no status
+        // at all). So, I didn't spend much time worrying about the error case here. If
+        // we do get an error, you end up staying in the picker. OTOH, actual connection errors
+        // get handled via the NSNetStreamEventOccurred event.
+    }
     
     // MARK: - MCNearbyServiceAdvertiserDelegate
     
